@@ -29,6 +29,7 @@ def create_new_project(project_name=None):
     # Validation for Project Name
     if None == project_name:
         print ("Error: Must provide a project name.")
+        return None
 
     if os.path.isabs(project_name) is False:
         target_path = os.path.join(os.getcwd(), project_name)
@@ -46,6 +47,7 @@ def create_new_app(app_name=None):
     # Validation for App Name
     if None == app_name:
         print ("Error: Must provide a app name.")
+        return None
 
     if os.path.isabs(app_name) is False:
         target_path = os.path.join(os.getcwd(), app_name)
