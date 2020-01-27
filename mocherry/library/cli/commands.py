@@ -3,9 +3,11 @@ from zipfile import ZipFile
 import sys
 import os
 import argparse
+import requests
+import io
 
-PROJECT_ZIP     =   "project.zip"
-APP_ZIP         =   "app.zip"
+PROJECT_ZIP     =   'https://github.com/techunits/mocherry/blob/develop/mocherry/resources/samples/project.zip?raw=true'
+APP_ZIP         =   'https://github.com/techunits/mocherry/blob/develop/mocherry/resources/samples/app.zip?raw=true'
 
 def execute_command():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -32,15 +34,20 @@ def create_new_project(project_name=None):
     if os.path.isabs(project_name) is False:
         target_path = os.path.join(os.getcwd(), project_name)
 
-    # Source path to create project
-    source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'resources', 'samples', PROJECT_ZIP)
-
-    # Extract zip to create project
-    with ZipFile(source_path, 'r') as zip_obj:
+    # download and create the project from sample
+    print('Downloading sample project: {}'.format(PROJECT_ZIP))
+    r = requests.get(PROJECT_ZIP)
+    with ZipFile(io.BytesIO(r.content)) as zip_obj:
         print('Creating new project: {}'.format(project_name))
         zip_obj.extractall(target_path)
-    
 
+    # override project name settings
+    with open(os.path.join(target_path, 'manage.py'), 'r') as fp:
+        contents = fp.read().replace('{{app_name}}', project_name)
+
+    with open(os.path.join(target_path, 'manage.py'), 'w') as fp:
+        fp.write(contents)
+    
 
 def create_new_app(app_name=None):
     # Validation for App Name
@@ -52,9 +59,12 @@ def create_new_app(app_name=None):
         target_path = os.path.join(os.getcwd(), app_name)
 
     # Source path to create app
-    source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'resources', 'samples', APP_ZIP)
+    # source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'resources', 'samples', APP_ZIP)
 
     # Extract zip to create app
-    with ZipFile(source_path, 'r') as zip_obj:
-        print('Creating new app: {}'.format(app_name))
-        zip_obj.extractall(target_path)
+    # with ZipFile(source_path, 'r') as zip_obj:
+    #     print('Creating new app: {}'.format(app_name))
+    #     zip_obj.extractall(target_path)
+
+    import tempfile
+    print(tempfile.gettempdir())

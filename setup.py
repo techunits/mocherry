@@ -22,6 +22,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/techunits/mocherry",
     packages=setuptools.find_packages(),
+    zip_safe=True,
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
