@@ -3,9 +3,9 @@ import sys
 import os
 import glob
 import importlib
-from mocherry.settings import CONFIG
 
 def bootstrap_application():
+    from mocherry.settings import CONFIG
     if sys.argv[1] == 'runserver':
         from mocherry.library.wsgi import runserver
         runserver()
