@@ -40,13 +40,15 @@ setuptools.setup(
         "Topic :: Software Development :: Libraries :: Application Frameworks",
         "Topic :: Software Development :: Libraries :: Python Modules"
     ],
+    setup_requires=[
+        'cherrypy',
+        'wheel'
+    ],
     install_requires=[
         'mongoengine',
         'routes',
         'cherrypy_cors',
-        'cherrypy',
-        'requests',
-        'wheel'
+        'requests'
     ],
     entry_points = {
         'console_scripts': [
