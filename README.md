@@ -39,12 +39,12 @@ Lets assume you have already created a project by following above steps, then yo
 ```sh
 # Application name: app_001
 $ mocherry-cli startapp "app_001"
-Downloading sample app: https://github.com/techunits/mocherry/blob/develop/mocherry/resources/samples/app.zip?raw=true
+Downloading sample app: https://github.com/techunits/mocherry/blob/master/mocherry/resources/samples/app.zip?raw=true
 Creating new app: app_001
 
 # Application name: app_002
 $ mocherry-cli startapp "app_002"
-Downloading sample app: https://github.com/techunits/mocherry/blob/develop/mocherry/resources/samples/app.zip?raw=true
+Downloading sample app: https://github.com/techunits/mocherry/blob/master/mocherry/resources/samples/app.zip?raw=true
 Creating new app: app_002
 
 $ python manage.py runserver  # start WSGI server
