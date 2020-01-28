@@ -22,7 +22,7 @@ Now MoCherry consists of a cli script which will enable developers to create a s
 ### Create project skeleton
 ```sh
 $ mocherry-cli startproject "my_project_001"
-Downloading sample project: https://github.com/techunits/mocherry/blob/mocherry/resources/samples/project.zip?raw=true
+Downloading sample project: https://github.com/techunits/mocherry/blob/master/mocherry/resources/samples/project.zip?raw=true
 Creating new project: my_project_001
 $ cd my_project_001
 $ python manage.py runserver  # start WSGI server
