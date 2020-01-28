@@ -1,3 +1,4 @@
+
 # MoCherry
 MoCherry is built around CherryPy & mongoengine to support REST webserivces with very low memory footprint, support for MongoDB ORM, built-in WSGI server and faster initilization.
 
@@ -17,19 +18,44 @@ $ pip install git+https://github.com/techunits/mocherry.git
 ```
 
 # Create First Application
-Our team is working on the project/app generator rapidly to have a seemless app generation at developer's ease. For now we have provided an base application in the following repository so that you can get started with MoCherry. [Download Sample Application](https://github.com/techunits/mocherry-sample-app)
-
+Now MoCherry consists of a cli script which will enable developers to create a sample project / app from command-line without manually download it from github. Steps as follows:
+### Create project skeleton
 ```sh
-$ git clone https://github.com/techunits/mocherry-sample-app.git
-$ cd mocherry-sample-app
+$ mocherry-cli startproject "my_project_001"
+Downloading sample project: https://github.com/techunits/mocherry/blob/master/mocherry/resources/samples/project.zip?raw=true
+Creating new project: my_project_001
+$ cd my_project_001
 $ python manage.py runserver  # start WSGI server
-[12/Jan/2020:00:52:20] ENGINE Listening for SIGTERM.
-[12/Jan/2020:00:52:20] ENGINE Bus STARTING
-[12/Jan/2020:00:52:20] ENGINE Set handler for console events.       
-[12/Jan/2020:00:52:20] ENGINE Started monitor thread 'Autoreloader'.
-[12/Jan/2020:00:52:21] ENGINE Serving on http://localhost:9090
-[12/Jan/2020:00:52:21] ENGINE Bus STARTED
+[20/Jan/2020:00:52:20] ENGINE Listening for SIGTERM.
+[20/Jan/2020:00:52:20] ENGINE Bus STARTING
+[20/Jan/2020:00:52:20] ENGINE Set handler for console events.       
+[20/Jan/2020:00:52:20] ENGINE Started monitor thread 'Autoreloader'.
+[20/Jan/2020:00:52:21] ENGINE Serving on http://localhost:9090
+[20/Jan/2020:00:52:21] ENGINE Bus STARTED
 ```
+
+### Create applicaiton skeleton
+Lets assume you have already created a project by following above steps, then you have to go inside that project and create app skeleton as per your requirements.
+```sh
+# Application name: app_001
+$ mocherry-cli startapp "app_001"
+Downloading sample app: https://github.com/techunits/mocherry/blob/master/mocherry/resources/samples/app.zip?raw=true
+Creating new app: app_001
+
+# Application name: app_002
+$ mocherry-cli startapp "app_002"
+Downloading sample app: https://github.com/techunits/mocherry/blob/master/mocherry/resources/samples/app.zip?raw=true
+Creating new app: app_002
+
+$ python manage.py runserver  # start WSGI server
+[20/Jan/2020:00:52:20] ENGINE Listening for SIGTERM.
+[20/Jan/2020:00:52:20] ENGINE Bus STARTING
+[20/Jan/2020:00:52:20] ENGINE Set handler for console events.       
+[20/Jan/2020:00:52:20] ENGINE Started monitor thread 'Autoreloader'.
+[20/Jan/2020:00:52:21] ENGINE Serving on http://localhost:9090
+[20/Jan/2020:00:52:21] ENGINE Bus STARTED
+```
+
 
 # MoCherry Management Commands
 MoCherry framework also support custom management commands to enhance its CLI capabilities. With the framework sample code we have provided a test command to verify how it works
