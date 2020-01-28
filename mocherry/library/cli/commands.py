@@ -58,13 +58,9 @@ def create_new_app(app_name=None):
     if os.path.isabs(app_name) is False:
         target_path = os.path.join(os.getcwd(), app_name)
 
-    # Source path to create app
-    # source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'resources', 'samples', APP_ZIP)
-
-    # Extract zip to create app
-    # with ZipFile(source_path, 'r') as zip_obj:
-    #     print('Creating new app: {}'.format(app_name))
-    #     zip_obj.extractall(target_path)
-
-    import tempfile
-    print(tempfile.gettempdir())
+    # download and create the project from sample
+    print('Downloading sample app: {}'.format(PROJECT_ZIP))
+    r = requests.get(PROJECT_ZIP)
+    with ZipFile(io.BytesIO(r.content)) as zip_obj:
+        print('Creating new app: {}'.format(project_name))
+        zip_obj.extractall(target_path)
