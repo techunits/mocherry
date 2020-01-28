@@ -6,8 +6,8 @@ import argparse
 import requests
 import io
 
-PROJECT_ZIP     =   'https://github.com/techunits/mocherry/blob/develop/mocherry/resources/samples/project.zip?raw=true'
-APP_ZIP         =   'https://github.com/techunits/mocherry/blob/develop/mocherry/resources/samples/app.zip?raw=true'
+PROJECT_ZIP     =   'https://github.com/techunits/mocherry/blob/master/mocherry/resources/samples/project.zip?raw=true'
+APP_ZIP         =   'https://github.com/techunits/mocherry/blob/master/mocherry/resources/samples/app.zip?raw=true'
 
 def execute_command():
     parser = argparse.ArgumentParser(description='Process some integers.')
