@@ -58,9 +58,19 @@ def create_new_app(app_name=None):
     if os.path.isabs(app_name) is False:
         target_path = os.path.join(os.getcwd(), app_name)
 
-    # download and create the project from sample
-    print('Downloading sample app: {}'.format(PROJECT_ZIP))
-    r = requests.get(PROJECT_ZIP)
-    with ZipFile(io.BytesIO(r.content)) as zip_obj:
-        print('Creating new app: {}'.format(project_name))
-        zip_obj.extractall(target_path)
+    if os.path.isdir(target_path) is True:
+        print ('Error: App with the same name(\'{}\') already exists'.format(app_name))
+        return None
+
+    if os.path.isfile(os.path.join(os.getcwd(), 'manage.py')) is True and \
+        os.path.isfile(os.path.join(os.getcwd(), 'urls.py')) is True:
+        
+        # download and create the app from sample inside a project
+        print('Downloading sample app: {}'.format(APP_ZIP))
+        r = requests.get(APP_ZIP)
+        with ZipFile(io.BytesIO(r.content)) as zip_obj:
+            print('Creating new app: {}'.format(app_name))
+            zip_obj.extractall(target_path)
+    else:
+        print ('Error: No valid project found. Please run from a valid MoCherry project.')
+        return None
