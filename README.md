@@ -34,7 +34,7 @@ $ python manage.py runserver  # start WSGI server
 [20/Jan/2020:00:52:21] ENGINE Bus STARTED
 ```
 
-### Create applicaiton skeleton
+### Create application skeleton
 Lets assume you have already created a project by following above steps, then you have to go inside that project and create app skeleton as per your requirements.
 ```sh
 # Application name: app_001
