@@ -6,7 +6,7 @@ if sys.platform in ['darwin', 'linux', 'linux2']:
     extras_require = {}
 elif sys.platform in ['win32']:
     extras_require = {
-        'win32': 'pypiwin32'
+        'win32': 'pywin32'
     }
 
 with open("README.md", "r") as fh:
@@ -14,7 +14,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mocherry",
-    version="1.0.5",
+    version="1.0.6",
     author="Sougata P.",
     author_email="skall.paul@gmail.com",
     description="CherryPy REST webservice framework with MongoDB ORM support",

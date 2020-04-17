@@ -1,6 +1,6 @@
 
 # MoCherry
-MoCherry is built around CherryPy & mongoengine to support REST webserivces with very low memory footprint, support for MongoDB ORM, built-in WSGI server and faster initilization.
+MoCherry is built around CherryPy & mongoengine to support REST webserivces with very low memory footprint, support for MongoDB ORM, built-in production ready WSGI server and faster initilization.
 
 # Features
   - In-built REST webservice support
@@ -12,9 +12,9 @@ MoCherry is built around CherryPy & mongoengine to support REST webserivces with
   - MIT licensed
 
 # Installation
-Currently MoCherry is not deployed to python pip repository. We will soon deploy it there for developers' convenience. In the meantime following steps can be followed to install mocherry to your development environment. The following command will download and install MoCherry and all it's required dependencies to your system or virtualenv.
+MoCherry is already a part of python PyPi repository. So the following command will download and install MoCherry from PyPi repository and all it's required dependencies to your system or virtualenv.
 ```sh
-$ pip install git+https://github.com/techunits/mocherry.git
+$ pip install mocherry
 ```
 
 # Create First Application
