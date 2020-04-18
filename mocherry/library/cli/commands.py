@@ -49,7 +49,7 @@ def create_new_project(project_name=None):
         settings_data['name'] = project_name
 
     with open(settings_path, 'w') as fp:
-        fp.write(json.dumps(settings_data))
+        fp.write(json.dumps(settings_data, indent=4))
     
 
 def create_new_app(app_name=None):
