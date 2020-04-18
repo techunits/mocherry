@@ -47,6 +47,7 @@ setuptools.setup(
         'routes',
         'cherrypy_cors',
         'requests',
+        'celery',
         'faker'
     ],
     entry_points = {
