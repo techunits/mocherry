@@ -61,9 +61,34 @@ $ python manage.py runserver  # start WSGI server
 MoCherry framework also support custom management commands to enhance its CLI capabilities. With the framework sample code we have provided a test command to verify how it works
 
 ```sh
-$ python manage.py test
+$ python manage.py testcmd
 Success: This is a test command
 ```
+
+# MoCherry Sample Dataset
+MoCherry provides sample data from the version 1.0.9 onwards. This should help developers to play around with the framework immediately without writing any code. You can create sample data by using following management command.
+
+```sh
+$ python manage.py load_sample_data
+Database: mongodb://localhost:27017/mocherry_sample_app
+
+New Sample Data: 5e9abd4ab22cfec440086e60
+New Sample Data: 5e9abd4ab22cfec440086e61
+New Sample Data: 5e9abd4ab22cfec440086e62
+New Sample Data: 5e9abd4ab22cfec440086e63
+New Sample Data: 5e9abd4ab22cfec440086e64
+New Sample Data: 5e9abd4ab22cfec440086e65
+New Sample Data: 5e9abd4ab22cfec440086e66
+New Sample Data: 5e9abd4ab22cfec440086e67
+New Sample Data: 5e9abd4ab22cfec440086e68
+New Sample Data: 5e9abd4ab22cfec440086e69
+New Sample Data: 5e9abd4ab22cfec440086e6a
+New Sample Data: 5e9abd4ab22cfec440086e6b
+New Sample Data: 5e9abd4ab22cfec440086e6c
+New Sample Data: 5e9abd4ab22cfec440086e6d
+New Sample Data: 5e9abd4ab22cfec440086e6e
+```
+
 
 # Sample Applications
  - https://github.com/techunits/mocherry-sample-app
