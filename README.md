@@ -17,7 +17,7 @@ MoCherry is already a part of python PyPi repository. So the following command w
 $ pip install mocherry
 ```
 
-# Create First Application
+# Create Your First Project
 Now MoCherry consists of a cli script which will enable developers to create a sample project / app from command-line without manually download it from github. Steps as follows:
 ### Create project skeleton
 ```sh
