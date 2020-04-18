@@ -5,23 +5,21 @@ import sys
 if sys.platform in ['darwin', 'linux', 'linux2']:
     extras_require = {}
 elif sys.platform in ['win32']:
-    extras_require = {
-        'win32': 'pywin32'
-    }
+    extras_require = {}
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="mocherry",
-    version="1.0.7",
+    version="1.0.8",
     author="Sougata P.",
     author_email="skall.paul@gmail.com",
     description="CherryPy REST webservice framework with MongoDB ORM support",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/techunits/mocherry",
-    download_url="https://github.com/techunits/mocherry/archive/1.0.7.tar.gz",
+    download_url="https://github.com/techunits/mocherry/archive/1.0.8.tar.gz",
     packages=setuptools.find_packages(),
     zip_safe=True,
     classifiers=[
@@ -43,13 +41,13 @@ setuptools.setup(
     ],
     setup_requires=[
         'cherrypy',
-        'wheel'
     ],
     install_requires=[
         'mongoengine',
         'routes',
         'cherrypy_cors',
-        'requests'
+        'requests',
+        'faker'
     ],
     entry_points = {
         'console_scripts': [
